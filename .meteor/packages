@@ -10,3 +10,4 @@ orionjs:filesystem
 orionjs:s3
 orionjs:summernote
 reactive-dict
+spiderable
