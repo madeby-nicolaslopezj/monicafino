@@ -1,0 +1,90 @@
+@import "/client/stylesheets/lib.import.less";
+
+#projects {
+	background-color: rgb(237, 237, 232);
+	
+	.item {
+		padding-top: 20px;
+
+		.imageBox {
+			margin-top: 20px;
+			margin-bottom: 40px;
+            position: relative;
+            float: left;
+            cursor: pointer;
+        }
+        .imageBox .hoverImg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            -webkit-transition: opacity .4s;
+			-moz-transition: opacity .4s;
+			-o-transition: opacity .4s;
+			transition: opacity .4s;
+        }
+        .imageBox:hover .hoverImg {
+            opacity: 1;
+        }
+
+        .description {
+
+        }
+
+		.title {
+			display: block;
+			top: -20px;
+			width: 100%;
+			text-align: center;
+
+			@media (max-width: @screen-xs-max) {
+				top: -85px;
+			}
+
+			h2 {
+				display: inline-block;
+				margin-right: auto;
+				margin-left: auto;
+				padding: 10px 0;
+				font-size: 20pt;
+				border-top: 1px solid @text-color;
+				border-bottom: 1px solid @text-color;
+			}
+
+			&:after,
+			&:before {
+				content: "";
+			    display: table-cell;
+			    width: 10%;
+			}
+		}
+
+		.content {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.link {
+			margin-top: 30px;
+			display: block;
+			bottom: 20px;
+			width: 100%;
+			text-align: center;
+
+			@media (max-width: @screen-xs-max) {
+				bottom: -75px;
+			}
+
+			a {
+				display: inline-block;
+				margin-right: auto;
+				margin-left: auto;
+				padding: 6px 0;
+				color: @text-color;
+				border-top: 1px solid @brand-primary;
+				border-bottom: 1px solid @brand-primary;
+			}
+
+		}
+	}
+}

@@ -1,0 +1,19 @@
+<template name="post">
+	{{> headerForPost }}
+	<div id="post">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<h1 class="title">{{ title }}</h1>
+					<a class="back-to-news" href="{{ pathFor 'site' }}">Back to News</a>
+					<p class="description">{{ description }}</p>
+					<img src="{{ image.link }}">
+					<div class="content">
+						{{ text.content }}
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> footer }}
+	</div>
+</template>

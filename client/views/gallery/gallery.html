@@ -1,0 +1,38 @@
+<template name="fullScreenGallery">
+	{{# if shouldBeOpen }}
+		<div class="full-screen-gallery">
+			<div class="close"></div>
+			<div id="carousel-gallery" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner" role="listbox">
+					{{# each items }}
+						<div class="item {{# if isCero index }}active{{/ if }}" style="background-image: url({{ image.link }})">
+							<div class="information-container">
+								<div class="information {{# unless hidingInformation }}showing{{/ unless }}">
+									<h3 class="title">{{ title }}</h3>
+									<p>{{ description }}</p>
+									<div class="tinyline"></div>
+								</div>
+							</div>
+							<div class="information-btn">
+								<a href="#">{{# if hidingInformation }}Information{{ else }}Hide Information{{/ if }}</a>
+							</div>
+						</div>
+					{{/ each }}
+				</div>
+				{{# if needsCarousel }}
+				<a class="left carousel-control" href="#carousel-gallery" role="button" data-slide="prev">
+					<span class="btn-left"></span>
+				</a>
+				<ol class="carousel-indicators">
+					{{# each items }}
+						<li data-target="#carousel-gallery" data-slide-to="{{ index }}" class="{{# if isCero index }}active{{/ if }}"></li>
+					{{/ each }}
+				</ol>
+				<a class="right carousel-control" href="#carousel-gallery" role="button" data-slide="next">
+					<span class="btn-right"></span>
+				</a>
+				{{/ if }}
+			</div>
+		</div>
+	{{/ if }}
+</template>

@@ -1,0 +1,40 @@
+<template name="projects">
+	<section id="projects">
+		<div class="container">
+			<h1>Projects</h1>
+			{{# each projects }}
+				{{> projectsItem }}
+			{{/ each }}
+		</div>
+	</section>
+</template>
+
+<template name="projectsItem">
+	<div class="row item">
+		<div class="col-sm-7 clearfix">
+			<div class="imageBox">
+			    <div class="imageInn">
+			        <img src="{{ image.link }}">
+			    </div>
+			    <div class="hoverImg">
+			        <img src="{{ dict 'projectsHoverImage.link' }}">
+			    </div>
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<div class="description">
+				<div class="title">
+					<h2>{{ title }}</h2>
+				</div>
+				
+				<div class="content">
+					{{{ text.content }}}
+				</div>
+
+				<div class="link">
+					<a href="#">See more pictures</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

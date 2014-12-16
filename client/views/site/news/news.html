@@ -1,0 +1,50 @@
+<template name="news">
+	<section id="news">
+		<div class="container">
+			<h1>News</h1>
+			<div class="row">
+				<div class="col-sm-12">
+					{{# each news }}
+						{{> newsRow }}
+					{{/ each}}
+
+					{{# if moreThanLimit }}
+						<div class="pager">
+							<a class="left {{ canGoLeft }}" href="#">PREVIOUS</a>
+							<span class="divider"></span>
+							<a class="right {{ canGoRight }}" href="#">NEXT</a>
+						</div>
+					{{/ if }}
+				</div>
+			</div>
+		</div>
+	</section>
+</template>
+
+<template name="newsRow">
+	<div class="row">
+		{{#each row }}
+			{{> newsItem}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="newsItem">
+	<div class="col-sm-6">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="item">
+					<h2 class="title">{{ title }}</h2>
+					<p class="description">{{ description }}</p>
+					<a href="{{ pathFor 'post' }}">
+						<img src="{{ image.link }}">
+					</a>
+					<p class="preview">
+						{{ preview }}... 
+						<a href="{{ pathFor 'post' }}">Read More</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

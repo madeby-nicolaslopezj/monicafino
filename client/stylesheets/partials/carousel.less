@@ -1,0 +1,30 @@
+@import "/client/stylesheets/lib.import.less";
+
+.carousel-control {
+	// Toggles
+	text-shadow: none !important;
+	
+	.btn-left,
+	.btn-right{
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		display: inline-block;
+		font-size: 25px;
+	}
+	.btn-left{
+		color: @text-color;
+		left: 50%;
+		margin-left: -10px;
+	}
+	.btn-right{
+		color: @text-color;
+		right: 50%;
+		margin-right: -10px;
+	}
+}
+
+.carousel-control.left,
+.carousel-control.right {
+	background-image: none !important;
+}

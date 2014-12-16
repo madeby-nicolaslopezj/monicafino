@@ -1,0 +1,28 @@
+<template name="about">
+	<section id="about">
+		<div class="container">
+			<h1>About</h1>
+			<div class="row">
+				<div class="col-sm-5">
+					<img src="{{ dict 'aboutImage.link' }}">
+				</div>
+				<div class="col-sm-7">
+					<div class="row">
+						<div class="col-sm-11 col-sm-offset-1">
+							<div class="content">
+								{{{ dict 'aboutText.content' }}}
+							</div>
+
+							<div class="clearfix secondary-images">
+								<img data-index="1" src="{{ dict 'aboutImage1.link' 'http://lorempixel.com/200/260' }}">
+								<img data-index="2" src="{{ dict 'aboutImage2.link' 'http://lorempixel.com/200/260' }}">
+								<img data-index="3" src="{{ dict 'aboutImage3.link' 'http://lorempixel.com/200/260' }}">
+								<img data-index="4" src="{{ dict 'aboutImage4.link' 'http://lorempixel.com/200/260' }}">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

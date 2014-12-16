@@ -1,0 +1,37 @@
+@import "/client/stylesheets/lib.import.less";
+
+#news {
+
+	background-color: rgb(245, 245, 241);
+
+	.item {
+
+		.description {
+			margin-top: -5px;
+		}
+		.preview {
+			margin-top: 10px;
+		}
+	}
+
+	.pager {
+		margin-top: 30px;
+
+		.divider {
+			border-left: 1px solid @gray;
+			margin: 0 10px;
+		}
+
+		a {
+			letter-spacing: 0.1em;
+		}
+
+		.disabled, 
+		.disabled:hover {
+			pointer-events: none;
+			cursor: default;
+			color: @text-color;
+			text-decoration: none;
+		}
+	}
+}
