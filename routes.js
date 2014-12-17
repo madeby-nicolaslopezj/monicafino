@@ -8,6 +8,7 @@ var subscriptions = function() {
 }
 
 Router.map(function() {
+	
 
 	this.route('site', {
 		path: '/',
