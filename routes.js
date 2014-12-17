@@ -3,7 +3,7 @@ var subscriptions = function() {
 		orion.subs.subscribe('dictionary'),
 		orion.subs.subscribe('entity', 'aboutGalleryImages'),
 		orion.subs.subscribe('entity', 'projects'),
-		orion.subs.subscribe('entity', 'news')
+		orion.subs.subscribe('entity', 'blog')
 	]
 }
 
@@ -36,17 +36,17 @@ Router.map(function() {
 	});
 
 	this.route('post', {
-		path: '/news/:_id',
+		path: '/blog/:_id',
 		loadingTemplate: 'adminLoading',
 		waitOn: subscriptions,
 		data: function() {
-			return orion.entities.news.collection.findOne({_id: this.params._id});
+			return orion.entities.blog.collection.findOne({_id: this.params._id});
 		},
 		onAfterAction: function() {
 			if (!Meteor.isClient) {
 				return;
 			}
-			var post = orion.entities.news.collection.findOne({_id: this.params._id});
+			var post = orion.entities.blog.collection.findOne({_id: this.params._id});
 			SEO.set({
 				title: post.title,
 				link: {

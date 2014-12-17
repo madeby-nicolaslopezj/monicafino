@@ -37,10 +37,21 @@ Template.fullScreenGallery.events({
 	},
 	'click .information-btn a': function() {
 		Session.set('hidingInformation', !Session.get('hidingInformation'));
+	},
+	'click': function(event) {
+		if (
+			!$(event.target).is('a') &&
+			!$(event.target).is('li') && 
+			!$(event.target).is('i')
+			) {
+			Session.set('galleryItems', null);
+		}
+		console.log($(event.target));
 	}
 });
 
 Template.fullScreenGallery.rendered = function () {
+	Session.set('hidingInformation', true);
 	$('#carousel-gallery').carousel({
 		interval: 4000
 	})

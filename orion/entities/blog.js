@@ -1,8 +1,5 @@
-orion.addEntity('news', {
+orion.addEntity('blog', {
     title: {
-        type: String,
-    },
-    description: {
         type: String,
     },
     preview: {
@@ -18,9 +15,9 @@ orion.addEntity('news', {
         type: orion.attributes.image,
     }
 }, {
-    sidebarName: 'News',
-    pluralName: 'News',
-    singularName: 'News Item',
+    sidebarName: 'blog',
+    pluralName: 'Posts',
+    singularName: 'Post',
     defaultIndexTableFields: [
         orion.adminIndexAttributeViews.image('image', 'Image'),
         { key: 'title', label: 'Title' },

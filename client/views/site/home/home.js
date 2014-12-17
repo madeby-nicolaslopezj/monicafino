@@ -15,5 +15,5 @@ Template.home.rendered = function () {
 		interval: 7000
 	});
 
-	$("#home").css({'padding-top': $(".header").outerHeight() + 40});
+	$("#home").css({'padding-top': $(".header").outerHeight() + 15});
 };

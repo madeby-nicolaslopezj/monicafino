@@ -1,11 +1,11 @@
-<template name="news">
-	<section id="news">
+<template name="blog">
+	<section id="blog">
 		<div class="container">
-			<h1>News</h1>
+			<h1>Blog</h1>
 			<div class="row">
 				<div class="col-sm-12">
-					{{# each news }}
-						{{> newsRow }}
+					{{# each blog }}
+						{{> blogRow }}
 					{{/ each}}
 
 					{{# if moreThanLimit }}
@@ -21,21 +21,21 @@
 	</section>
 </template>
 
-<template name="newsRow">
+<template name="blogRow">
 	<div class="row">
 		{{#each row }}
-			{{> newsItem}}
+			{{> blogItem}}
 		{{/each}}
 	</div>
 </template>
 
-<template name="newsItem">
+<template name="blogItem">
 	<div class="col-sm-6">
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<div class="item">
 					<h2 class="title">{{ title }}</h2>
-					<p class="description">{{ description }}</p>
+					<p class="date">{{ getDate createdAt }}</p>
 					<a href="{{ pathFor 'post' }}">
 						<img src="{{ image.link }}">
 					</a>
