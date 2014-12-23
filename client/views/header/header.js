@@ -3,6 +3,13 @@ Template.header.rendered = function () {
 		target: '.header',
 		offset: $(".header").outerHeight()
 	})
+
+	$(".nav li.home").on('activate.bs.scrollspy', function (event) {
+		$(".header .social").fadeOut(100);
+	})
+	$(".nav li:not(.home)").on('activate.bs.scrollspy', function () {
+		$(".header .social").fadeIn(200)
+	})
 };
 
 Template.header.events({

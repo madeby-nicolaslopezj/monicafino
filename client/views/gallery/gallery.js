@@ -12,7 +12,11 @@ Deps.autorun(function () {
 
 Template.fullScreenGallery.helpers({
 	shouldBeOpen: function() {
-		return !!Session.get('galleryItems');
+		try	{
+			return !!Session.get('galleryItems').length;
+		} catch (e) {
+			return false;
+		}
 	},
 	hidingInformation: function() {
 		return Session.get('hidingInformation');

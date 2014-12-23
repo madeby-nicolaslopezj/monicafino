@@ -15,7 +15,7 @@ orion.addEntity('blog', {
         type: orion.attributes.image,
     }
 }, {
-    sidebarName: 'blog',
+    sidebarName: 'Blog',
     pluralName: 'Posts',
     singularName: 'Post',
     defaultIndexTableFields: [
