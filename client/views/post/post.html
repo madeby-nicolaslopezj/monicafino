@@ -5,11 +5,11 @@
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">
 					<h1 class="title">{{ title }}</h1>
-					<a class="back-to-blog" href="{{ pathFor 'site' }}">Back to Blog</a>
+					<a class="back-to-blog" href="{{ pathFor 'site' }}#blog">Back to Blog</a>
 					<p class="date">{{ getDate createdAt }}</p>
-					<img src="{{ image.link }}">
+					<img src="{{ image.url }}">
 					<div class="content">
-						{{ text.content }}
+						{{{ text }}}
 					</div>
 				</div>
 			</div>

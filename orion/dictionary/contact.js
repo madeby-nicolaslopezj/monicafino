@@ -16,11 +16,12 @@ orion.dictionary.addDefinition('contactEmail', 'contact', {
 	optional: true,
 });
 
-orion.dictionary.addDefinition('contactImage', 'contact', {
-	type: orion.attributes.image,
-	label: "Image",
-	optional: true,
-});
+orion.dictionary.addDefinition('contactImage', 'contact',  
+	orion.attribute('file', {
+        label: "Image",
+    	optional: true
+    })
+);
 
 orion.dictionary.addDefinition('contactRights', 'contact', {
 	type: String,

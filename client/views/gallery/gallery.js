@@ -3,7 +3,7 @@ openGallery = function(items) {
 }
 
 Deps.autorun(function () {
-	if (Session.get('galleryItems')) {
+	if (Session.get('galleryItems') && !!Session.get('galleryItems').length) {
 		$("body").css({'overflow':'hidden'});
 	} else {
 		$("body").css({'overflow':''});
@@ -42,15 +42,19 @@ Template.fullScreenGallery.events({
 	'click .information-btn a': function() {
 		Session.set('hidingInformation', !Session.get('hidingInformation'));
 	},
+	'click .item': function(event) {
+		if ($(event.target).parents(".information-container").length == 0 &&
+			!$(event.target).is('a')) { 
+			$('#carousel-gallery').carousel('next')
+		}
+	},
 	'click': function(event) {
 		if (
-			!$(event.target).is('a') &&
-			!$(event.target).is('li') && 
-			!$(event.target).is('i')
+			$(event.target).attr('class') == 'full-screen-gallery' ||
+			$(event.target).attr('class') == 'carousel-indicators'
 			) {
 			Session.set('galleryItems', null);
 		}
-		console.log($(event.target));
 	}
 });
 

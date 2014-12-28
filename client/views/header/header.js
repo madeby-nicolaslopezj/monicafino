@@ -1,6 +1,6 @@
 Template.header.rendered = function () {
 	$('body').scrollspy({
-		target: '.header',
+		target: '.header-page',
 		offset: $(".header").outerHeight()
 	})
 
@@ -10,6 +10,14 @@ Template.header.rendered = function () {
 	$(".nav li:not(.home)").on('activate.bs.scrollspy', function () {
 		$(".header .social").fadeIn(200)
 	})
+
+	$('body').imagesLoaded( function() {
+		if (window.location.hash) {
+			$('html, body').animate({
+		        scrollTop: $(window.location.hash).offset().top - $(".header").outerHeight() + 1
+		    }, 1000);
+		}
+	});
 };
 
 Template.header.events({

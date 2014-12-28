@@ -1,9 +1,11 @@
 Template.home.helpers({
     homeImages: function () {
-        return orion.dictionary.get('homeImages').map(function(document, index){
-			document.index = index;
-			return document;
+    	var images = orion.dictionary.get('homeImages').map(function(document, index){
+        	
+			document.item.index = index;
+			return document.item;
 		});
+        return images;
     },
     isCero: function(index) {
     	return index == 0;

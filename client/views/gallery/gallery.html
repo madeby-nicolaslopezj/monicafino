@@ -10,7 +10,7 @@
 			<div id="carousel-gallery" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner" role="listbox">
 					{{# each items }}
-						<div class="item {{# if isCero index }}active{{/ if }}" style="background-image: url({{ image.link }})">
+						<div class="item {{# if isCero index }}active{{/ if }}" style="background-image: url({{ image.url }})">
 							<div class="information-container">
 								<div class="information {{# unless hidingInformation }}showing{{/ unless }}">
 									<h3 class="title">{{ title }}</h3>

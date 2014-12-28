@@ -3,14 +3,13 @@ orion.addEntity('projects', {
         type: String,
         label: "Title"
     },
-    text: {
-        type: orion.attributes.summernote,
-        label: "Description"
-    },
-    image: {
-        type: orion.attributes.image,
-        label: "Image"
-    },
+    text: orion.attribute('summernote', {
+        label: "Description",
+        optional: true
+    }),
+    image: orion.attribute('file', {
+        label: "Image",
+    }),
     gallery: {
         type: [Object],
         optional: true
@@ -21,16 +20,13 @@ orion.addEntity('projects', {
     "gallery.$.description": {
         type: String
     },
-    "gallery.$.image": {
-        type: orion.attributes.image
-    },
-    
+    "gallery.$.image": orion.attribute('file'),
 }, {
     sidebarName: 'Projects',
     pluralName: 'Projects',
     singularName: 'Project',
-    defaultIndexTableFields: [
-        orion.adminIndexAttributeViews.image('image', 'Image'),
-        { key: 'title', label: 'Title' },
+    tableColumns: [
+        orion.attributeColumn('file', 'image', 'Image'),
+        { data:'title', title: 'Title' },
     ]
 });

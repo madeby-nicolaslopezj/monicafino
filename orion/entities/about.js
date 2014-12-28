@@ -7,10 +7,10 @@ orion.addEntity('aboutGalleryImages', {
         type: String,
         label: "Description"
     },
-    image: {
-        type: orion.attributes.image,
-        label: "Image"
-    },
+    image: orion.attribute('file', {
+        label: "Image",
+        optional: true
+    }),
     aboutIndex: {
         type: Number,
         label: "Attached to which about image",
@@ -20,9 +20,9 @@ orion.addEntity('aboutGalleryImages', {
     sidebarName: 'About Gallery',
     pluralName: 'Images',
     singularName: 'Image',
-    defaultIndexTableFields: [
-        orion.adminIndexAttributeViews.image('image', 'Image'),
-        { key: 'title', label: 'Title' },
-        { key: 'aboutIndex', label: 'About Image' },
+    tableColumns: [
+        orion.attributeColumn('file', 'image', 'Image'),
+        { data:'title', title: 'Title' },
+        { data:'aboutIndex', title: 'About Image' },
     ]
 });

@@ -4,11 +4,12 @@ orion.dictionary.addDefinition('socialFacebook', 'social', {
     optional: true
 });
 
-orion.dictionary.addDefinition('socialFacebookImage', 'social', {
-    type: orion.attributes.image,
-    label: "Facebook Icon",
-    optional: true
-});
+orion.dictionary.addDefinition('socialFacebookImage', 'social',  
+    orion.attribute('file', {
+        label: "Facebook Icon",
+        optional: true
+    })
+);
 
 orion.dictionary.addDefinition('socialHouzz', 'social', {
     type: String,
@@ -16,11 +17,12 @@ orion.dictionary.addDefinition('socialHouzz', 'social', {
     optional: true
 });
 
-orion.dictionary.addDefinition('socialHouzzImage', 'social', {
-    type: orion.attributes.image,
-    label: "Houzz Icon",
-    optional: true
-});
+orion.dictionary.addDefinition('socialHouzzImage', 'social',  
+    orion.attribute('file', {
+        label: "Houzz Icon",
+        optional: true
+    })
+);
 
 orion.dictionary.addDefinition('socialPinterest', 'social', {
     type: String,
@@ -28,8 +30,9 @@ orion.dictionary.addDefinition('socialPinterest', 'social', {
     optional: true
 });
 
-orion.dictionary.addDefinition('socialPinterestImage', 'social', {
-    type: orion.attributes.image,
-    label: "Pinterest Icon",
-    optional: true
-});
+orion.dictionary.addDefinition('socialPinterestImage', 'social',  
+    orion.attribute('file', {
+        label: "Pinterest Icon",
+        optional: true
+    })
+);

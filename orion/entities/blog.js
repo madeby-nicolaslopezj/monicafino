@@ -8,18 +8,14 @@ orion.addEntity('blog', {
             type: 'textarea'
         }
     },
-    text: {
-        type: orion.attributes.summernote,
-    },
-    image: {
-        type: orion.attributes.image,
-    }
+    text: orion.attribute('summernote'),
+    image: orion.attribute('file')
 }, {
     sidebarName: 'Blog',
     pluralName: 'Posts',
     singularName: 'Post',
-    defaultIndexTableFields: [
-        orion.adminIndexAttributeViews.image('image', 'Image'),
-        { key: 'title', label: 'Title' },
+    tableColumns: [
+        orion.attributeColumn('file', 'image', 'Image'),
+        { data:'title', title: 'Title' },
     ]
 });

@@ -1,5 +1,6 @@
-orion.dictionary.addDefinition('servicesText', 'services', {
-    type: orion.attributes.summernote,
-    label: "Text",
-    optional: true
-});
+orion.dictionary.addDefinition('servicesText', 'services',  
+	orion.attribute('summernote', {
+        label: "Text",
+    	optional: true
+    })
+);
