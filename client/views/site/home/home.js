@@ -25,16 +25,17 @@ Template.home.rendered = function () {
 
     var func = function() {
         if ($(window).height() - $("#home").height() > 0 && $(window).width() > 768) {
-            $("#home").css({'min-height': $(window).height()});
-            var marginHome = -40 + ($(window).height() - $("#home").height()) / 2;
+            var homeMinHeight = $(window).height();
+            $("#home").css({'min-height': homeMinHeight});
+            var maxMarginHeight = ($("#home").outerHeight() - $("#home").height()) / 3
 
             var onScroll = function() {
                 var in_min = 0;
                 var in_max = $("#home").height();
                 var current = $("#home").height() - $(window).scrollTop();
                 var out_min = 0;
-                var headerHeight = current.map(in_min, in_max, out_min, marginHome);
-                if (headerHeight > 0) {
+                var headerHeight = current.map(in_min, in_max, out_min, maxMarginHeight);
+                if (headerHeight > 0 && maxMarginHeight > 0) {
                     $(".header-margin").height(headerHeight - 1);
                 }
             }
