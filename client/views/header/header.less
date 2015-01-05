@@ -12,8 +12,17 @@
 		position: absolute;
 	}
 
+	&.on-home {
+		@media (min-width: @screen-sm-min) {
+			.social {
+				opacity: 0;
+			}
+		}
+	}
+
 	.social {
-		display: none;
+		transition:opacity 0.3s;
+		opacity: 1;
 		position: absolute;
 		right: 10px;
 		bottom: 10px;
