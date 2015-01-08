@@ -9,6 +9,7 @@ orionjs:file-attribute
 orionjs:filesystem
 orionjs:s3
 orionjs:summernote
+orionjs:styles
 reactive-dict
 spiderable
 manuelschoebel:ms-seo
