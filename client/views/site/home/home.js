@@ -37,6 +37,8 @@ Template.home.rendered = function () {
                 var headerHeight = current.map(in_min, in_max, out_min, maxMarginHeight);
                 if (headerHeight > 0 && maxMarginHeight > 0) {
                     $(".header-margin").height(headerHeight - 1);
+                } else {
+                    $(".header-margin").height(0);
                 }
             }
 

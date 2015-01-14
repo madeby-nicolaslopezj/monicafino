@@ -1,3 +1,17 @@
+var scrollTo = function(id, count) {
+	count = count || 0;
+	console.log(count);
+	var left = ($(id).offset().top - $(window).scrollTop()) - $(".header").outerHeight();
+	if (left > 0 && count < 2) {
+		$("html, body").animate({
+			scrollTop: $(window).scrollTop() + left
+		}, 50, function() {
+			count++;
+			scrollTo(id, count);
+		})
+	}
+}
+
 Template.header.rendered = function () {
 	$('body').scrollspy({
 		target: '.header-page',
@@ -18,10 +32,7 @@ Template.header.rendered = function () {
 			$('html, body').animate({
 		        scrollTop: $(window.location.hash).offset().top - margin + 1
 		    }, 1000, function() {
-		    	var margin = $(window).width() > 768 ? $(".header").outerHeight() : 0;
-		    	$('html, body').animate({
-			        scrollTop: $(window.location.hash).offset().top - margin + 1
-			    }, 50);
+		    	scrollTo(id);
 		    });
 		}
 	});
@@ -35,10 +46,7 @@ Template.header.events({
 		$('html, body').animate({
 	        scrollTop: $(id).offset().top - margin + 1
 	    }, 500, function() {
-	    	var margin = $(window).width() > 768 ? $(".header").outerHeight() : 0;
-	    	$('html, body').animate({
-		        scrollTop: $(id).offset().top - margin + 1
-		    }, 50);
+	    	scrollTo(id);
 	    });
 
 	    return false;
