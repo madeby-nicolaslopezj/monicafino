@@ -24,7 +24,7 @@ Template.home.rendered = function () {
 	$("#home").css({'padding-top': $(".header").outerHeight() + 15});
 
     var func = function() {
-        if ($(window).height() - $("#home").height() > 0 && $(window).width() > 768) {
+        if ($(window).width() > 768) {
             var homeMinHeight = $(window).height();
             $("#home").css({'min-height': homeMinHeight});
             var maxMarginHeight = ($("#home").height() - $("#home .content").height()) / 2;
@@ -53,6 +53,10 @@ Template.home.rendered = function () {
     $(window).resize(function(){
         func();
     });
-
+    $('#home').imagesLoaded(function() {
+        func();
+    });
     func();
+
+    
 };

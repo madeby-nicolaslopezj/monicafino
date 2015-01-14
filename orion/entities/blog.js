@@ -8,7 +8,7 @@ orion.addEntity('blog', {
             type: 'textarea'
         }
     },
-    text: orion.attribute('summernote'),
+    text: orion.attribute('froala'),
     image: orion.attribute('file')
 }, {
     sidebarName: 'Blog',

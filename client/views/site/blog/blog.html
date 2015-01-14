@@ -22,11 +22,11 @@
 </template>
 
 <template name="blogRow">
-	<div class="row">
-		{{#each row }}
+	{{#each row }}
+		<div class="row">
 			{{> blogItem}}
-		{{/each}}
-	</div>
+		</div>
+	{{/each}}
 </template>
 
 <template name="blogItem">

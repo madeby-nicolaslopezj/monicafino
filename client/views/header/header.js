@@ -1,6 +1,5 @@
 var scrollTo = function(id, count) {
 	count = count || 0;
-	console.log(count);
 	var left = ($(id).offset().top - $(window).scrollTop()) - $(".header").outerHeight();
 	if (left > 0 && count < 2) {
 		$("html, body").animate({
@@ -23,7 +22,11 @@ Template.header.rendered = function () {
 	})
 	$(".nav li:not(.home)").on('activate.bs.scrollspy', function () {
 		$(".header").removeClass('on-home');
-		$(".header-margin").height(0);
+		if ($(window).width() > 768) {
+			$("#contact").css({'min-height': $(window).height() - $(".header").outerHeight()});
+			var marginHeight = ($("#contact").height() - $("#contact .container").height()) / 2;
+			$(".contact-margin").height(marginHeight);
+		}
 	})
 
 	$('body').imagesLoaded( function() {
@@ -32,7 +35,7 @@ Template.header.rendered = function () {
 			$('html, body').animate({
 		        scrollTop: $(window.location.hash).offset().top - margin + 1
 		    }, 1000, function() {
-		    	scrollTo(id);
+		    	scrollTo(window.location.hash);
 		    });
 		}
 	});
