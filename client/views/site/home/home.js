@@ -58,5 +58,7 @@ Template.home.rendered = function () {
     $(window).resize(function(){
         setHomeHeight();
     });
-    setHomeHeight();
+    $("#home").imagesLoaded(function() {
+        setHomeHeight();
+    })
 };
