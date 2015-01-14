@@ -3,7 +3,7 @@ var scrollTo = function(id, count) {
 	var left = ($(id).offset().top - $(window).scrollTop()) - $(".header").outerHeight();
 	if (left > 0 && count < 2) {
 		$("html, body").animate({
-			scrollTop: $(window).scrollTop() + left
+			scrollTop: $(window).scrollTop() + left + 1
 		}, 50, function() {
 			count++;
 			scrollTo(id, count);
@@ -23,6 +23,7 @@ Template.header.rendered = function () {
 	$(".nav li:not(.home)").on('activate.bs.scrollspy', function () {
 		$(".header").removeClass('on-home');
 		if ($(window).width() > 768) {
+			setHomeHeight();
 			$("#contact").css({'min-height': $(window).height() - $(".header").outerHeight()});
 			var marginHeight = ($("#contact").height() - $("#contact .container").height()) / 2;
 			$(".contact-margin").height(marginHeight);
@@ -33,7 +34,7 @@ Template.header.rendered = function () {
 		if (window.location.hash) {
 			var margin = $(window).width() > 768 ? $(".header").outerHeight() : 0;
 			$('html, body').animate({
-		        scrollTop: $(window.location.hash).offset().top - margin + 1
+		        scrollTop: $(window.location.hash).offset().top - margin + 2
 		    }, 1000, function() {
 		    	scrollTo(window.location.hash);
 		    });
