@@ -27,7 +27,7 @@ Template.home.rendered = function () {
         if ($(window).height() - $("#home").height() > 0 && $(window).width() > 768) {
             var homeMinHeight = $(window).height();
             $("#home").css({'min-height': homeMinHeight});
-            var maxMarginHeight = ($("#home").outerHeight() - $("#home").height()) / 3
+            var maxMarginHeight = ($("#home").height() - $("#home .content").height()) / 2;
 
             var onScroll = function() {
                 var in_min = 0;
