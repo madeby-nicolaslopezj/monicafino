@@ -8,7 +8,7 @@ orionjs:core
 orionjs:file-attribute
 orionjs:filesystem
 orionjs:s3
-orionjs:froala-editor
+orionjs:summernote
 orionjs:styles
 reactive-dict
 spiderable

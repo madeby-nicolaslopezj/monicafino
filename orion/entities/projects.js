@@ -3,7 +3,7 @@ orion.addEntity('projects', {
         type: String,
         label: "Title"
     },
-    text: orion.attribute('froala', {
+    text: orion.attribute('summernote', {
         label: "Description",
         optional: true
     }),

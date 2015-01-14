@@ -1,5 +1,5 @@
 orion.dictionary.addDefinition('servicesText', 'services',  
-	orion.attribute('froala', {
+	orion.attribute('summernote', {
         label: "Text",
     	optional: true
     })
