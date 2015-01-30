@@ -3,7 +3,7 @@ var subscriptions = function() {
 		orion.subs.subscribe('dictionary'),
 		orion.subs.subscribe('entity', 'aboutGalleryImages'),
 		orion.subs.subscribe('entity', 'projects'),
-		orion.subs.subscribe('entity', 'blog')
+		//orion.subs.subscribe('entity', 'blog')
 	]
 }
 
@@ -35,6 +35,7 @@ Router.map(function() {
 		}
 	});
 
+	/*
 	this.route('post', {
 		path: '/blog/:_id',
 		loadingTemplate: 'adminLoading',
@@ -63,5 +64,6 @@ Router.map(function() {
 			});
 		}
 	});
+	*/
 
 });

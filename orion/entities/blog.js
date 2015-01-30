@@ -1,3 +1,4 @@
+/*
 orion.addEntity('blog', {
     title: {
         type: String,
@@ -19,3 +20,5 @@ orion.addEntity('blog', {
         { data:'title', title: 'Title' },
     ]
 });
+
+*/
