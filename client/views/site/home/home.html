@@ -3,6 +3,13 @@
 		<div class="header-margin"></div>
 		<div class="content">
 			<div class="container">
+				<div class="logo">
+					<img src="{{ dict 'homeLogo.url' }}">
+				</div>
+			</div>
+			{{> header }}
+			<br><br>
+			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
 						<div id="carousel-home" class="carousel slide carousel-fade" data-ride="carousel">
@@ -17,10 +24,9 @@
 					</div>
 				</div>
 			</div>
+			<br>
 			<div class="container">
-				<div class="logo">
-					<img src="{{ dict 'homeLogo.url' }}">
-				</div>
+				{{{ dict 'homeText' }}}
 			</div>
 		</div>
 	</section>

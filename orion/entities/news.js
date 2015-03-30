@@ -1,5 +1,4 @@
-/*
-orion.addEntity('blog', {
+orion.addEntity('news', {
     title: {
         type: String,
     },
@@ -9,10 +8,10 @@ orion.addEntity('blog', {
             type: 'textarea'
         }
     },
-    text: orion.attribute('summernote'),
+    text: orion.attribute('froala'),
     image: orion.attribute('file')
 }, {
-    sidebarName: 'Blog',
+    sidebarName: 'News',
     pluralName: 'Posts',
     singularName: 'Post',
     tableColumns: [
@@ -20,5 +19,3 @@ orion.addEntity('blog', {
         { data:'title', title: 'Title' },
     ]
 });
-
-*/

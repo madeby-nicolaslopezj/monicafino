@@ -1,31 +1,44 @@
 @import "/client/stylesheets/lib.import.less";
 
 .header {
-	position: fixed;
-	z-index: 1000;
-	padding-top: 20px;
-	font-size: 16px;
-	background-color: #fff;
-	width: 100%;
+	.nav {
+		font-size: 18px;
+		border-bottom: 1px solid transparent;
+		text-align: center;
+		margin: 0 auto;
 
-	@media (max-width: @screen-xs-max) {
-		position: absolute;
-	}
+		> li {
+			display: inline-block;
+			margin-bottom: -2px;
 
-	&.on-home {
-		@media (min-width: @screen-sm-min) {
-			.social {
-				opacity: 0;
+			> a {
+				color: @text-color;
+				margin-right: 2px;
+				line-height: @line-height-base;
+				border-bottom: 3px solid transparent;
+			}
+
+			&.active > a {
+				&,
+				&:hover,
+				&:focus {
+					border-bottom-color: @brand-primary;
+				}
+			}
+
+			&.active.home > a {
+				border-bottom-color: transparent;
 			}
 		}
 	}
 
 	.social {
+		margin-top: -22px;
 		transition:opacity 0.3s;
 		opacity: 1;
-		position: absolute;
-		right: 10px;
-		bottom: 10px;
+		text-align: right;
+		position: relative;
+		top: 33px;
 		margin-bottom: 0;
 
 		@media (max-width: @screen-xs-max) {
@@ -52,37 +65,6 @@
 				    filter: none; /* IE6-9 */
 				    -webkit-filter: none; 
 				}
-			}
-		}
-	}
-	
-
-	.nav {
-		border-bottom: 1px solid transparent;
-		text-align: center;
-		margin: 0 auto;
-
-		> li {
-			display: inline-block;
-			margin-bottom: -2px;
-
-			> a {
-				color: @text-color;
-				margin-right: 2px;
-				line-height: @line-height-base;
-				border-bottom: 3px solid transparent;
-			}
-
-			&.active > a {
-				&,
-				&:hover,
-				&:focus {
-					border-bottom-color: @brand-primary;
-				}
-			}
-
-			&.active.home > a {
-				border-bottom-color: transparent;
 			}
 		}
 	}

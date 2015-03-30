@@ -1,0 +1,53 @@
+<template name="newsIndex">
+	<section id="news">
+		<div class="container">
+			<h1>News</h1>
+			{{# each posts }}
+				{{> newsIndexItem }}
+			{{/ each }}
+		</div>
+	</section>
+</template>
+
+<template name="newsIndexItem">
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<h2 class="title">{{ title }}</h2>
+			<p class="date">{{ getDate createdAt }}</p>
+			<a href="{{ pathFor 'news.show' }}">
+				<img src="{{ image.url }}">
+			</a>
+			<br><br>
+			<p class="preview">
+				{{ preview }}... 
+				<a href="{{ pathFor 'news.show' }}">read more</a>
+			</p>
+			<br>
+			<hr>
+			<br>
+		</div>
+	</div>
+</template>
+
+<template name="newsShow">
+	<section id="news">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<h1 class="text-left">{{ title }}</h1>
+					<h4>
+						<span class="pull-right">
+							<a href="{{ pathFor 'news.index' }}">Back to news</a>
+						</span>
+						{{ getDate createdAt }}
+					</h4>
+					<img src="{{ image.url }}">
+					<br><br>
+					<div class="content">
+						{{{ text }}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

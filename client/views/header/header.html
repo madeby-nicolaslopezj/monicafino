@@ -1,42 +1,45 @@
 <template name="header">
-	<div class="header on-home header-page">
-		<div class="header-margin"></div>
-		<ul class="social"> 
-			<li class="facebook">
-				<a href="{{ dict 'socialFacebook' }}" target="_blank">
-					<img src="{{ dict 'socialFacebookImage.url' }}">
-				</a>
-			</li>
-			<li class="houzz">
-				<a href="{{ dict 'socialHouzz' }}" target="_blank">
-					<img src="{{ dict 'socialHouzzImage.url' }}">
-				</a>
-			</li>
-			<li class="pinterest">
-				<a href="{{ dict 'socialPinterest' }}" target="_blank">
-					<img src="{{ dict 'socialPinterestImage.url' }}">
-				</a>
-			</li>
-		</ul>
-		<ul class="nav">
-			<li class="home">
-				<a href="#home">Home</a>
-			</li>
-			<li>
-				<a href="#about">About</a>
-			</li>
-			<li>
-				<a href="#projects">Projects</a>
-			</li>
-			<li>
-				<a href="#services">Services</a>
-			</li>
-			<li>
-				<a href="{{ dict 'newsLink' }}" target="_blank">News</a>
-			</li>
-			<li>
-				<a href="#contact">Contact</a>
-			</li>
-		</ul>
+	<div class="header-container">
+		<div class="container">
+			<div class="header on-home header-page">
+				<ul class="social"> 
+					<li class="facebook">
+						<a href="{{ dict 'socialFacebook' }}" target="_blank">
+							<img src="{{ dict 'socialFacebookImage.url' }}">
+						</a>
+					</li>
+					<li class="houzz">
+						<a href="{{ dict 'socialHouzz' }}" target="_blank">
+							<img src="{{ dict 'socialHouzzImage.url' }}">
+						</a>
+					</li>
+					<li class="pinterest">
+						<a href="{{ dict 'socialPinterest' }}" target="_blank">
+							<img src="{{ dict 'socialPinterestImage.url' }}">
+						</a>
+					</li>
+				</ul>
+				<ul class="nav">
+					<li class="home">
+						<a href="{{ pathFor 'home' }}">Home</a>
+					</li>
+					<li class="{{ isActiveRoute regex='services' }}">
+						<a href="{{ pathFor 'services' }}">Services</a>
+					</li>
+					<li class="{{ isActiveRoute regex='about' }}">
+						<a href="{{ pathFor 'about' }}">About</a>
+					</li>
+					<li class="{{ isActiveRoute regex='projects' }}">
+						<a href="{{ pathFor 'projects' }}">Projects</a>
+					</li>
+					<li class="{{ isActiveRoute regex='news' }}">
+						<a href="{{ pathFor 'news.index' }}">News</a>
+					</li>
+					<li class="{{ isActiveRoute regex='contact' }}">
+						<a href="{{ pathFor 'contact' }}">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </template>

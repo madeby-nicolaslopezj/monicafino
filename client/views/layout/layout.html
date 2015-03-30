@@ -1,19 +1,44 @@
-<template name="site">
+<template name="mainLayout">
 	<div class="layout">
 		{{> fullScreenGallery }}
 		{{> header }}
-		{{> home }}
-		{{> about }}
-		{{> projects }}
-		{{> services }}
-		<!--{{> blog }}-->
-		{{> contact }}
-		{{> footer }}
+		{{> yield }}
 	</div>
 
 	<style type="text/css">
-	.header {
-		background-color: {{ dict 'headerBackgroundColor' }};
+	.header-container {
+		background-color: {{ dict 'headerBackgroundColor' '#fff' }};
+	}
+	#home {
+		background-color: {{ dict 'homeBackgroundColor' }};
+	}
+	#about {
+		background-color: {{ dict 'aboutBackgroundColor' }};
+	}
+	#projects {
+		background-color: {{ dict 'projectsBackgroundColor' }};
+	}
+	#services {
+		background-color: {{ dict 'servicesBackgroundColor' }};
+	}
+	#blog {
+		background-color: {{ dict 'blogBackgroundColor' }};
+	}
+	#contact {
+		background-color: {{ dict 'contactBackgroundColor' }};
+	}
+	</style>
+</template>
+
+<template name="homeLayout">
+	<div class="layout">
+		{{> fullScreenGallery }}
+		{{> yield }}
+	</div>
+
+	<style type="text/css">
+	.header-container {
+		background-color: {{ dict 'headerBackgroundColor' '#fff' }};
 	}
 	#home {
 		background-color: {{ dict 'homeBackgroundColor' }};

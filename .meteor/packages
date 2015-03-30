@@ -5,11 +5,12 @@
 
 meteor-platform
 orionjs:core
+orionjs:bootstrap
 orionjs:file-attribute
 orionjs:filesystem
 orionjs:s3
-orionjs:summernote
-orionjs:styles
+orionjs:froala-editor
+natestrauser:font-awesome
 reactive-dict
 spiderable
 manuelschoebel:ms-seo

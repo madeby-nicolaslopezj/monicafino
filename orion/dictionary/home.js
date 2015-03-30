@@ -1,7 +1,6 @@
 orion.dictionary.addDefinition('homeLogo', 'home',  
 	orion.attribute('file', {
         label: "Logo",
-    	optional: true,
     	autoform: {
 			skipLabel: true
 		}
@@ -10,7 +9,12 @@ orion.dictionary.addDefinition('homeLogo', 'home',
 
 orion.dictionary.addDefinition('homeImages', 'home',
     orion.arrayOfAttribute('file', {
-        label: "Carousel Images",
-    	optional: true,
+        label: "Carousel Images"
+    })
+);
+
+orion.dictionary.addDefinition('homeText', 'home',
+    orion.attribute('froala', {
+        label: "Text"
     })
 );

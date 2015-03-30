@@ -6,7 +6,7 @@ orion.dictionary.addDefinition('aboutImage', 'about',
 );
 
 orion.dictionary.addDefinition('aboutText', 'about', 
-    orion.attribute('summernote', {
+    orion.attribute('froala', {
         label: "Text",
     	optional: true
     })
