@@ -1,11 +1,6 @@
 SiteController = RouteController.extend({
 	layoutTemplate: 'mainLayout',
-	waitOn: function() {
-    	return [
-    		orion.subs.subscribe('entity', 'aboutGalleryImages'),
-			orion.subs.subscribe('entity', 'projects'),
-    	];
-    },
+	loadingTemplate: 'adminLoading',
 	onAfterAction: function() {
 		if (!Meteor.isClient) {
 			return;
@@ -40,12 +35,18 @@ Router.route('/services', {
 
 Router.route('/about', {
 	name: 'about',
-	controller: 'SiteController'
+	controller: 'SiteController',
+	waitOn: function() {
+		return orion.subs.subscribe('entity', 'aboutGalleryImages');
+	},
 });
 
 Router.route('/projects', {
 	name: 'projects',
-	controller: 'SiteController'
+	controller: 'SiteController',
+	waitOn: function() {
+		return orion.subs.subscribe('entity', 'projects');
+	}
 });
 
 Router.route('/contact', {
