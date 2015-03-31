@@ -8,7 +8,7 @@
 				</div>
 			</div>
 			{{> header }}
-			<br><br>
+			<br>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
@@ -16,7 +16,7 @@
 							<div class="carousel-inner" role="listbox">
 								{{# each homeImages }}
 									<div class="item {{# if isCero index }}active{{/ if }}">
-										<img class="home-image" src="{{ url }}">
+										<img style="width: 100%;" class="home-image" src="{{ url }}">
 									</div>
 								{{/ each }}
 							</div>

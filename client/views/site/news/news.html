@@ -15,7 +15,7 @@
 			<h2 class="title">{{ title }}</h2>
 			<p class="date">{{ getDate createdAt }}</p>
 			<a href="{{ pathFor 'news.show' }}">
-				<img src="{{ image.url }}">
+				<img style="width: 100%;" src="{{ image.url }}">
 			</a>
 			<br><br>
 			<p class="preview">
@@ -41,8 +41,12 @@
 						</span>
 						{{ getDate createdAt }}
 					</h4>
-					<img src="{{ image.url }}">
+					<img src="{{ image.url }}" style="width: 100%;">
 					<br><br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
 					<div class="content">
 						{{{ text }}}
 					</div>

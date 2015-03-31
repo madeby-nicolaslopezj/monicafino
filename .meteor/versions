@@ -67,7 +67,7 @@ orionjs:core@0.6.2
 orionjs:file-attribute@0.0.5
 orionjs:filesystem@0.0.17
 orionjs:froala-editor@0.1.2
-orionjs:s3@0.0.12
+orionjs:s3@0.0.13
 random@1.0.2
 reactive-dict@1.0.5
 reactive-var@1.0.4
