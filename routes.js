@@ -8,7 +8,7 @@ SiteController = RouteController.extend({
 		SEO.set({
 			title: orion.dictionary.get('seoTitle'),
 			link: {
-				icon: orion.dictionary.get('seoFavIcon.url'),
+				//icon: orion.dictionary.get('seoFavIcon.url'),
 			},
 			meta: {
 				'description': orion.dictionary.get('seoDescription')
@@ -84,7 +84,7 @@ Router.route('/news/:_id', {
 		SEO.set({
 			title: post.title,
 			link: {
-				icon: orion.dictionary.get('seoFavIcon.url'),
+				//icon: orion.dictionary.get('seoFavIcon.url'),
 			},
 			meta: {
 				'description': post.preview
